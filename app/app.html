@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Timesheet</title>
+    <link rel="stylesheet" type="text/css" href="/styles/appendTime.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+</head>
+<body class="sansFont"><h1></h1>
+    <div class="header flexRow">
+        <div class="flexRow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="2em" height="2em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 6l16 0" />
+                <path d="M4 12l16 0" />
+                <path d="M4 18l16 0" />
+            </svg>
+
+            {Timesheet Name}
+
+        </div>
+
+        {day and Time}
+
+    </div>
+
+
+    <div class="footer">
+        <div id = "timerContainer">
+            <div id = "timer" class="flexRow timerContents roundBorder">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-empty" id="timerHourglassEmpty" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                    <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" id="timerHourglassHigh" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6.5 7h11" />
+                    <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                    <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-low" id="timerHourglassLow" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6.5 17h11" />
+                    <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                    <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass" id="timerHourglassFull" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6.5 7h11" />
+                    <path d="M6.5 17h11" />
+                    <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                    <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" />
+                </svg>
+
+                <div id ="timerCounter" class="flexRow">
+                    <div id="timerHour">00</div>
+                    <div id="timerSeparator">:</div>
+                    <div id="timerMinute">00</div>
+                    <div id="secondContainer"><div id="timerSecond">00</div></div>
+                </div>
+            </div>
+        </div>
+        <div class = "hideButtonContainer flexRow buttonContents">
+            <svg xmlns="http://www.w3.org/2000/svg" class="chevronButton icon icon-tabler icon-tabler-chevron-compact-down" id = "hideButton" width="4em" height="1em" viewBox="0 0 24 6" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" onclick="_hide()">
+                <path stroke="none" d="M0,0h24v6H0V0z" fill="none"/>
+                <path d="M4,1.5l8,3l8-3"/>
+            </svg>
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="chevronButton icon icon-tabler icon-tabler-chevron-compact-up" id = "showButton" width="4em" height="1em" viewBox="0 0 24 6" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;" onclick="_show()">
+                <path stroke="none" d="M0 0h24v6H0z" fill="none"></path>
+                <path d="M4 4.5l8 -3l8 3"></path>
+            </svg>
+
+
+        </div>
+        <div id="appendTime">
+            <form name="appendTime"
+                id="appendTimeForm"
+                class="transitionDown"
+                enctype="text/plain" method="post"
+                onsubmit="event.preventDefault(); _submit();">
+                <div id="formInside" class="flexRow">
+                    <div class="flexRow">
+                        <input name="date"
+                            id="dateInput"
+                            class="roundBorder dateTimeInput dateTimePair appendTimeElement textInput"
+                            required disabled type="date">
+                        <div id="times"
+                            class="flexRow dateTimePair">
+                            <input name="time-in"
+                                id="timeInInput"
+                                class="roundBorder dateTimeInput appendTimeElement textInput"
+                                required disabled type="time" step="60">
+                            <input name="time-out "
+                                id="timeOutInput"
+                                class="roundBorder dateTimeInput appendTimeElement textInput"
+                                required disabled type="time" step="60">
+                        </div>
+                        <button name="verticalClear"
+                            id="verticalClearButton"
+                            class="clearButton roundBorder appendTimeElement deleteButton"
+                            disabled onclick="event.preventDefault(), _confirmClear()">
+                            <div class="buttonContents">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M18 6l-12 12"></path>
+                                    <path d="M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <button name="verticalSubmit"
+                            id="verticalSubmitButton"
+                            class="submitButton roundBorder appendTimeElement primaryButton"
+                            disabled value="Enter" onclick="event.preventDefault(), _submit()">
+                            <div class="buttonContents">
+                                Enter
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l5 5l10 -10"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <input name="horizontalNotes"
+                        id="horizontalNotesInput"
+                        class="notesInput textInput roundBorder appendTimeElement"
+                        disabled type="text" placeholder="shift summary (optional)" size="1">
+                    <textarea name="verticalNotes" form="appendTime"
+                        id="verticalNotesInput"
+                        class="notesInput textInput roundBorder appendTimeElement"
+                        disabled placeholder="shift notes (optional)"></textarea>
+                    <button name="horizontalClear"
+                        id="horizontalClearButton"
+                        class="clearButton roundBorder appendTimeElement deleteButton"
+                        disabled onclick="event.preventDefault(), _confirmClear()">
+                        <div class="buttonContents">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M18 6l-12 12"></path>
+                                <path d="M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <button name="horizontalSubmit"
+                        id="horizontalSubmitButton"
+                        class="submitButton roundBorder appendTimeElement primaryButton"
+                        disabled value="Enter" onclick="event.preventDefault(), _submit()">
+                        <div class="buttonContents">
+                            Enter
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 12l5 5l10 -10"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </form>
+            <div class="flexRow">
+                <button name="time-in"
+                    id="clockInButton"
+                    class="clockButton roundBorder appendTimeElement primaryButton purpleButton"
+                    onclick="_clockIn()">
+                    <div class="buttonContents">
+                        Clock in
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alarm" width="1.2em" height="1.2em" viewBox="0 0 26 26" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 13m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                            <path d="M12 10l0 3l2 0" />
+                            <path d="M7 4l-2.75 2" />
+                            <path d="M17 4l2.75 2" />
+                        </svg>
+                    </div>
+                </button>
+                <button name="time-out"
+                    id="clockOutButton"
+                    class="clockButton roundBorder appendTimeElement secondaryButton"
+                    disabled onclick="_clockOut()" style="display: none;">
+                    <div class="buttonContents">
+                        Clock out
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alarm-off" width="1.2em" height="1.2em" viewBox="0 0 26 26" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7.587 7.566a7 7 0 1 0 9.833 9.864m1.35 -2.645a7 7 0 0 0 -8.536 -8.56" />
+                            <path d="M12 12v1h1" />
+                            <path d="M5.261 5.265l-1.011 .735" />
+                            <path d="M17 4l2.75 2" />
+                            <path d="M3 3l18 18" />
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <dialog class="dialog confirmDialog roundBorder" id="confirmClearDialog">
+                <div class="dialogContent">
+                    <div class="dialogText">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle warningIcon" width="5em" height="5em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z" />
+                            <path d="M12 9v4" />
+                            <path d="M12 17h.01" />
+                        </svg>
+                        <div class="dialogHeader">
+                            Confirm Clear
+                        </div>
+                        Delete shift data?
+                    </div>
+                    <form method="dialog">
+                        <div class="buttonContents">
+                            <button id="confirmClear"
+                            class="dialogButton roundBorder deleteButton"
+                            autofocus="false" onclick="_clear()">
+
+                                <div class="buttonContents">
+                                        Clear
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="1.2em" height="1.2em" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M18 6l-12 12"></path>
+                                        <path d="M6 6l12 12"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                            <button id="cancelClear"
+                            class="dialogButton roundBorder secondaryButton"
+                            autofocus="false">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </dialog>
+        </div>
+    </div>
+
+    <script src="/js/appendTime.js"></script>
+</body>
+</html>
