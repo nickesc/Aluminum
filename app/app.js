@@ -12,6 +12,15 @@ class TimesheetApp {
             res.sendFile(path.join(__dirname, "app.html"));
         });
 
+        this.app.get("/styles/colors.css", function (req, res) {
+            res.sendFile(path.join(__dirname, "styles/colors.css"));
+        });
+        this.app.get("/styles/fonts.css", function (req, res) {
+            res.sendFile(path.join(__dirname, "styles/fonts.css"));
+        });
+        this.app.get("/styles/main.css", function (req, res) {
+            res.sendFile(path.join(__dirname, "styles/main.css"));
+        });
         this.app.get("/styles/appendTime.css", function (req, res) {
             res.sendFile(path.join(__dirname, "styles/appendTime.css"));
         });
