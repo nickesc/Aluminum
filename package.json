@@ -9,7 +9,7 @@
     "app": "node ./app/app.js"
   },
   "author": "N. Escobar <nick@nescobar.media> (https://nickesc.github.io/)",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "express": "^4.18.2",
     "mongodb": "^5.6.0"
