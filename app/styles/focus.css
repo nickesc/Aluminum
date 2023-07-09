@@ -1,0 +1,10 @@
+.body{
+    --help: 0;
+}
+
+:focus{
+    outline: 3px solid var(--light-bg);
+    outline-offset: -1px;
+
+    box-sizing: border-box;
+}

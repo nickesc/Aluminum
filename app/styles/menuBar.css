@@ -1,0 +1,64 @@
+.body{
+    --help: 0;
+}
+
+.header{
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .5em max(1.5vw,1em) .5em max(1.5vw,1em);
+    border-bottom: 2px solid var(--gray15);
+    justify-content: space-between;
+    color: var(--light-text);
+
+}
+
+.timesheetName{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.headerRight, .headerLeft, .header, .menuButton{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: max(1.5vw,1em);
+}
+
+.menuButton{
+    font-size: 1em;
+}
+.secondaryMenuButton{
+    font-size: .8em;
+}
+
+.menuButtonIcon{
+    height: 2em;
+    width: 2em;
+}
+
+
+
+@media (pointer: coarse){
+    .header{
+        border-bottom: 2px solid var(--gray15);
+        border-left: 2px solid var(--gray15);
+        border-right: 2px solid var(--gray15);
+        border-bottom-left-radius: calc(var(--corner-radius)*2);
+        border-bottom-right-radius: calc(var(--corner-radius)*2);
+    }
+}
+
+@media (max-width: 630px) {
+
+    .header{
+        border-bottom: 2px solid var(--gray15);
+        border-left: 2px solid var(--gray15);
+        border-right: 2px solid var(--gray15);
+        border-bottom-left-radius: calc(var(--corner-radius)*2);
+        border-bottom-right-radius: calc(var(--corner-radius)*2);
+    }
+
+}

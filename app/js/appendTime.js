@@ -5,7 +5,8 @@ const appendTimeForm = document.getElementById("appendTimeForm");
 const verticalNotesInput = document.getElementById("verticalNotesInput");
 const horizontalNotesInput = document.getElementById("horizontalNotesInput");
 
-const timer = document.getElementById("timerContainer");
+const timerContainer = document.getElementById("timerContainer");
+const timer = document.getElementById("timer");
 const timerHour = document.getElementById("timerHour");
 const timerMinute = document.getElementById("timerMinute");
 const timerSecond = document.getElementById("timerSecond");
@@ -43,11 +44,14 @@ horizontalNotesInput.addEventListener("change", (event) => {
 });
 
 function showTimer(){
-    timer.style.display="unset";
+    timerContainer.classList.remove("hiddenDown");
+    //timer.style.display = "flex";
 }
 
 function hideTimer(){
-    timer.style.display = "none";
+    //timer.style.display = "none";
+    timerContainer.classList.add("hiddenDown");
+
 }
 
 function startTimer(){
@@ -257,8 +261,17 @@ function _clockIn() {
     let date = new Date();
     //console.log(date.toJSON());
 
+
+    // format the clock in date
+    //dateString = date.toJSON().slice(0, 10);
+
+
+
+    let unformattedDate = date.toLocaleString("en-GB").split(",")[0].split("/");
+    console.log(unformattedDate);
+
     // set clock in date
-    dateString = date.toJSON().slice(0, 10);
+    dateString = `${unformattedDate[2]}-${unformattedDate[1]}-${unformattedDate[0]}`;
     setText(dateInput, dateString);
 
     // set clock in time
@@ -315,23 +328,35 @@ function _submit() {
 function _confirmClear() {
     confirmClearDialog.inert = true;
     confirmClearDialog.showModal();
+
+    setTimeout(() => {confirmClearDialog.classList.remove("hiddenDown");}, 10);
     confirmClearDialog.inert = false;
 }
 
-function _clear() {
-    clearForm();
+function _closeDialog() {
+    confirmClearDialog.classList.add("hiddenDown");
+    setTimeout(() => {confirmClearDialog.close(); clearForm();}, 130);
 }
 
-function _hide(){
-    appendTimeForm.classList.add("hiddenForm");
+function showForm(){
+    appendTimeForm.classList.remove("hiddenDown");
+}
+function hideForm(){
+    appendTimeForm.classList.add("hiddenDown");
+}
+
+function _hideForm(){
+    hideForm();
     hideButton.style.display = "none";
     showButton.style.display = "unset";
 }
 
-function _show(){
-    appendTimeForm.classList.remove("hiddenForm");
-    hideButton.style.display = "unset";
-    showButton.style.display = "none";
+function _showForm(){
+    showForm()
+    if (hideButton.style.display == "none"){
+        hideButton.style.display = "unset";
+        showButton.style.display = "none";
+    }
 }
 // validate that the noun is a usable noun before handing it off to this function (only 1 word, correct case?)
 function setShiftNoun(noun){

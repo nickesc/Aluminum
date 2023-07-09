@@ -1,0 +1,262 @@
+.roundBorder{
+    border: #00000000 2px solid;
+    border-radius: var(--corner-radius);
+    padding: 0 .6em;
+    box-sizing: border-box;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.warningIcon{
+    color: var(--red60);
+}
+
+.buttonContents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.transitionDown{
+    height: fit-content;
+    max-height: 300px;
+    overflow: hidden;
+    -webkit-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -moz-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -ms-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -o-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+}
+
+.hiddenDown, #timerContainer.hiddenDown{
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+/* .transitionPop{
+    height: fit-content;
+    max-height: 1000px;
+    width: fit-content;
+    max-width: 1000px;
+    overflow: hidden;
+    -webkit-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -moz-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -ms-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -o-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+}
+
+.hiddenPop{
+    max-height: 0;
+    max-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+} */
+
+
+
+.primaryButton, .secondaryButton, .tertiaryButton, .deleteButton {
+    font-weight: 700;
+    font-size: var(--font-size);
+}
+
+button:disabled,
+input[type="button"]:disabled{
+    background-color: var(--gray30);
+    color:var(--gray50);
+}
+
+.primaryButton{
+    background-color: var(--blue60);
+    color: var(--dark-text);
+}
+.primaryButton:hover:enabled{
+    background-color: var(--blue60Hover);
+}
+.primaryButton:active:enabled{
+    background-color: var(--blue80);
+}
+.primaryButton:disabled{
+    background-color: var(--gray40);
+    color:var(--gray20);
+}
+
+.primaryButton.purpleButton{
+    background-color: var(--purple60);
+    color: var(--dark-text);
+}
+.primaryButton.purpleButton:hover:enabled{
+    background-color: var(--purple60Hover);
+}
+.primaryButton.purpleButton:active:enabled {
+    background-color: var(--purple80);
+    top:10px;
+}
+.primaryButton.purpleButton:disabled{
+    background-color: var(--gray40);;
+    color:var(--gray20);
+}
+
+.secondaryButton{
+    background-color: var(--gray90);
+    color: var(--dark-text);
+}
+.secondaryButton:hover:enabled{
+    background-color: var(--gray90Hover);
+}
+.secondaryButton:active:enabled{
+    background-color: var(--black);
+}
+.secondaryButton:disabled{
+    background-color: var(--gray50);
+    color:var(--gray20);
+}
+
+.tertiaryButton{
+    background-color: var(--light-bg);
+    border-color: var(--blue60);
+    outline: 2px solid var(--light-bg);
+    outline-offset: -4px;
+    color: var(--blue60);
+}
+.tertiaryButton:hover:enabled{
+    background-color: var(--blue60Hover);
+    border-color: var(--blue60Hover);
+    outline: none;
+    color: var(--dark-text);
+}
+.tertiaryButton:active:enabled{
+    background-color: var(--blue80);
+    border-color: var(--blue80);
+    outline: none;
+    color: var(--dark-text);
+}
+.tertiaryButton:disabled{
+    background-color: var(--light-bg);
+    border-color: var(--gray50);
+    outline: 2px solid var(--light-bg);
+    outline-offset: -4px;
+    color:var(--gray50);
+}
+
+.deleteButton{
+    background-color: var(--red60);
+    color: var(--dark-text);
+}
+.deleteButton:hover:enabled{
+    background-color: var(--red60Hover);
+}
+.deleteButton:active:enabled{
+    background-color: var(--red80);
+}
+
+.chevronButton{
+    color: var(--gray20);
+}
+
+.chevronButton:hover{
+    color: var(--gray20Hover);
+}
+
+.chevronButton:active{
+    color: var(--gray40);
+}
+
+.textInput{
+    background-color: var(--gray15);
+    color: var(--light-text);
+    font-family: var(--sans-font), Helvetica, sans-serif;
+}
+.textInput::placeholder {
+    color: var(--gray60);
+}
+.textInput:-ms-input-placeholder {
+    color: var(--gray60)
+}
+.textInput::-ms-input-placeholder {
+    color: var(--gray60)
+}
+
+.notesInput:disabled{
+    background-color: var(--gray20);
+    border-color: #00000000;
+}
+.notesInput:disabled::placeholder{
+    color:var(--gray30);
+}
+.notesInput:disabled:-ms-input-placeholder{
+    color:var(--gray30);
+}
+.notesInput:disabled::-ms-input-placeholder{
+    color:var(--gray30);
+}
+
+@media (max-width: 630px) {
+    .roundBorder{
+        border-radius: var(--corner-radius);
+        padding: .3em .4em;
+        box-sizing: border-box;
+    }
+}
+
+.dialog{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--gray15);
+    border-radius: calc(var(--corner-radius)*2);
+    background-color: var(--white);
+    color: var(--light-text);
+}
+
+.dialogHeader{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: .5em;
+}
+
+.dialogContent, .dialogText{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.dialogContent{
+    padding: 1.5em;
+}
+.dialogText{
+    padding: 0 1.5em 1.5em 1.5em;
+}
+
+.dialogButton, .dialogText{
+    font-size: var(--font-size);
+}
+
+.dialogButton{
+    width: 7em;
+    height: calc(3rem * .8);
+}
+
+.dialogIcon{
+    padding-bottom: .5em;
+}
+
+dialog::backdrop {
+  background: #FFFFFF60;
+
+
+}
+
+.pointer, .primaryButton:enabled, .secondaryButton:enabled, .tertiaryButton:enabled, .deleteButton:enabled, .chevronButton, .menuButton{
+    cursor:pointer;
+}

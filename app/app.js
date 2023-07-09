@@ -24,6 +24,12 @@ class TimesheetApp {
         this.app.get("/styles/appendTime.css", function (req, res) {
             res.sendFile(path.join(__dirname, "styles/appendTime.css"));
         });
+        this.app.get("/styles/menuBar.css", function (req, res) {
+            res.sendFile(path.join(__dirname, "styles/menuBar.css"));
+        });
+        this.app.get("/styles/focus.css", function (req, res) {
+          res.sendFile(path.join(__dirname, "styles/focus.css"));
+        });
 
         this.app.get("/js/appendTime.js", function (req, res) {
             res.sendFile(path.join(__dirname, "js/appendTime.js"));
