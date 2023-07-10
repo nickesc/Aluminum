@@ -1,0 +1,104 @@
+#sideBarOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--white);
+    opacity: 40%;
+}
+
+.sideBar{
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(15vw, 500px);
+    min-width: 20rem;
+    padding: .5em max(1vw,1em) 1.2em max(1vw,1em);
+    border-right: 2px solid var(--gray15);
+    justify-content: space-between;
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sideTop, .sideBottom{
+
+    font-size: 1.2em;
+
+}
+
+.sideTop{
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.sideBottom{
+    justify-content: flex-end;
+    border-top: 2px solid var(--gray15);
+}
+
+.closeButton{
+    position: sticky;
+    top: 0;
+    text-align: right;
+}
+
+.sideBarItem.flexRow{
+    align-items: center;
+    column-gap: .5em;
+    justify-content: flex-start;
+}
+
+.topItem{
+    padding-bottom: .8em;
+}
+.bottomItem{
+    padding-top: .8em;
+}
+
+.sideBar ::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.sideBar ::-webkit-scrollbar-track {
+  background: #88888820;
+}
+
+/* Handle */
+.sideBar ::-webkit-scrollbar-thumb {
+  background: #88888880;
+}
+
+/* Handle on hover */
+.sideBar ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+@media (pointer: coarse){
+    .sideBar{
+        border-bottom: 2px solid var(--gray15);
+        border-right: 2px solid var(--gray15);
+        border-top: 2px solid var(--gray15);
+        border-top-right-radius: calc(var(--corner-radius)*2);
+        border-bottom-right-radius: calc(var(--corner-radius)*2);
+    }
+}
+
+@media (max-width: 630px) {
+
+    .sideBar{
+        min-width: min(50vw, 400px);
+        border-bottom: 2px solid var(--gray15);
+        border-right: 2px solid var(--gray15);
+        border-top: 2px solid var(--gray15);
+        border-top-right-radius: calc(var(--corner-radius)*2);
+        border-bottom-right-radius: calc(var(--corner-radius)*2);
+    }
+
+}

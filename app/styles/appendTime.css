@@ -526,6 +526,15 @@ input::-webkit-datetime-edit-meridiem-field {
         font-weight: 700;
     }
 
+    @media (max-width: 400px) {
+        #horizontalSubmitButton{
+            display: initial;
+        }
+        #verticalSubmitButton{
+            display: none;
+        }
+    }
+
 }
 
 

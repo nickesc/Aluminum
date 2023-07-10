@@ -10,8 +10,21 @@
     flex-direction: row;
 }
 
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
 .warningIcon{
     color: var(--red60);
+}
+
+.noDisplay{
+    display: none;
+}
+
+.notVisible{
+    visibility: hidden;
 }
 
 .buttonContents{
@@ -20,47 +33,6 @@
     align-items: center;
     column-gap: .5em;
 }
-
-.transitionDown{
-    height: fit-content;
-    max-height: 300px;
-    overflow: hidden;
-    -webkit-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -moz-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -ms-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -o-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-}
-
-.hiddenDown, #timerContainer.hiddenDown{
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-top-width: 0;
-    border-bottom-width: 0;
-}
-
-/* .transitionPop{
-    height: fit-content;
-    max-height: 1000px;
-    width: fit-content;
-    max-width: 1000px;
-    overflow: hidden;
-    -webkit-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -moz-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -ms-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    -o-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-    transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
-}
-
-.hiddenPop{
-    max-height: 0;
-    max-width: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-width: 0;
-} */
-
 
 
 .primaryButton, .secondaryButton, .tertiaryButton, .deleteButton {
@@ -252,11 +224,32 @@ input[type="button"]:disabled{
 }
 
 dialog::backdrop {
-  background: #FFFFFF60;
-
+  background: hsla(0, 0%, 100%, 0.4);
 
 }
 
 .pointer, .primaryButton:enabled, .secondaryButton:enabled, .tertiaryButton:enabled, .deleteButton:enabled, .chevronButton, .menuButton{
     cursor:pointer;
+}
+
+
+#splash{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+@media (display-mode: standalone){
+    #splash{
+        visibility: visible;
+    }
+
 }

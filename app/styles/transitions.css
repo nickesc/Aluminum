@@ -1,0 +1,71 @@
+.transitionDown{
+    height: fit-content;
+    max-height: 300px;
+    overflow: hidden;
+    -webkit-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -moz-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -ms-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -o-transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    transition: max-height .15s ease-in-out, border-top-width .15s ease-in-out, border-bottom-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+}
+
+.hiddenDown, #timerContainer.hiddenDown{
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.transitionLeft{
+    max-width: 1000px;
+    overflow: hidden;
+    -webkit-transition: max-width .15s ease-in-out, min-width .15s ease-in-out, border-left-width .15s ease-in-out, border-right-width .15s ease-in-out, padding-left .15s ease-in-out, padding-right .15s ease-in-out;
+    -moz-transition: max-width .15s ease-in-out, min-width .15s ease-in-out, border-left-width .15s ease-in-out, border-right-width .15s ease-in-out, padding-left .15s ease-in-out, padding-right .15s ease-in-out;
+    -ms-transition: max-width .15s ease-in-out, min-width .15s ease-in-out, border-left-width .15s ease-in-out, border-right-width .15s ease-in-out, padding-left .15s ease-in-out, padding-right .15s ease-in-out;
+    -o-transition: max-width .15s ease-in-out, min-width .15s ease-in-out, border-left-width .15s ease-in-out, border-right-width .15s ease-in-out, padding-left .15s ease-in-out, padding-right .15s ease-in-out;
+    transition: max-width .15s ease-in-out, min-width .15s ease-in-out, border-left-width .15s ease-in-out, border-right-width .15s ease-in-out, padding-left .15s ease-in-out, padding-right .15s ease-in-out;
+}
+
+.hiddenLeft{
+    max-width: 0;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+.transitionFade{
+    opacity: 100%;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+
+.hiddenFade{
+    opacity: 0%;
+}
+
+/* .transitionPop{
+    height: fit-content;
+    max-height: 1000px;
+    width: fit-content;
+    max-width: 1000px;
+    overflow: hidden;
+    -webkit-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -moz-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -ms-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    -o-transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+    transition: max-height .15s ease-in-out, max-width .15s ease-in-out, border-width .15s ease-in-out, padding-top .15s ease-in-out, padding-bottom .15s ease-in-out;
+}
+
+.hiddenPop{
+    max-height: 0;
+    max-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+} */

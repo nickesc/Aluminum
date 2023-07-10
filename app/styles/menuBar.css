@@ -18,6 +18,11 @@
 .timesheetName{
     font-size: 1.4em;
     font-weight: bold;
+    line-height: 1em;
+    /* width: min-content;
+    overflow: hidden;
+    white-space: nowrap; */
+
 }
 
 .headerRight, .headerLeft, .header, .menuButton{

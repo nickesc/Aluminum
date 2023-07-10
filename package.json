@@ -4,6 +4,7 @@
   "description": "Small server for interacting with the database",
   "main": "server/server.js",
   "scripts": {
+    "start": "node ./server/server.js",
     "server": "node ./server/server.js",
     "db": "mongod --dbpath ./data --port 12345",
     "app": "node ./app/app.js"
